@@ -1,9 +1,9 @@
 import React from "react";
 import { BsSuitHeartFill } from "react-icons/bs";
-import { GiReturnArrow } from "react-icons/gi";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineLabelImportant } from "react-icons/md";
 import Image from "../../designLayouts/Image";
+import user from "../../../assets/images/user.jpg";
 import Badge from "./Badge";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -33,15 +33,24 @@ const Product = (props) => {
           <Image className="w-full h-full" imgSrc={props.img} />
         </div>
         <div className="absolute top-6 left-8">
-          {props.badge && <Badge text="New" />}
+          {props.badge && <Badge text="Trusted" />}
         </div>
         <div className="w-full h-32 absolute bg-white -bottom-[130px] group-hover:bottom-0 duration-700">
           <ul className="w-full h-full flex flex-col items-end justify-center gap-2 font-titleFont px-2 border-l border-r">
-            <li className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
-              Compare
+            <li className="text-[#767676] hover:text-primeColor h-[50px] text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
+              {/* Compare
               <span>
                 <GiReturnArrow />
-              </span>
+              </span> */}
+              <div className="flex items-center w-[120%] justify-end px-[10px]">
+                <img
+                  src={user}
+                  className=" h-[23px] object-contains mr-[8px] "
+                  alt=""
+                />
+                <p className=" mr-[8px] ">Sipho Khosa</p>
+                <p>⭐️⭐️⭐️</p>
+              </div>
             </li>
             <li
               onClick={() =>
@@ -87,7 +96,7 @@ const Product = (props) => {
           <h2 className="text-lg text-primeColor font-bold">
             {props.productName}
           </h2>
-          <p className="text-[#767676] text-[14px]">${props.price}</p>
+          <p className="text-[#767676] text-[14px]">R{props.price}</p>
         </div>
         <div>
           <p className="text-[#767676] text-[14px]">{props.color}</p>

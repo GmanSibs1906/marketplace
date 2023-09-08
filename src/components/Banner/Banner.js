@@ -24,7 +24,7 @@ const Banner = () => {
       <div
         style={{
           position: "absolute",
-          top: "50%",
+          top: "30%",
           left: "7%",
           transform: "translateY(-50%)",
         }}
