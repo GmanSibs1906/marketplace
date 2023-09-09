@@ -17,10 +17,10 @@ function FindIt() {
             <span className="text-primeColor font-semibold text-lg">
               FindIt :{" "}
             </span>{" "}
-            Have you ever seen something you loved but couldn't find it online?
-            Our platform allows you to upload a picture of any item you desire,
-            and our sellers will come to you with their offers. Say goodbye to
-            endless scrolling and hello to tailored options.
+            Are you tired of the traditional way of searching for products,
+            services, or accommodations? At our platform, we're revolutionizing
+            the way you find what you need, putting the power back in your
+            hands.
           </h1>
           <img src={findAdd} alt="" className=" w-[50%] object-contain " />
         </div>
@@ -33,10 +33,10 @@ function FindIt() {
               <span className="text-primeColor font-semibold text-lg">
                 FindItem :{" "}
               </span>{" "}
-              Are you tired of the traditional way of searching for products,
-              services, or accommodations? At our platform, we're
-              revolutionizing the way you find what you need, putting the power
-              back in your hands.
+              Have you ever seen something you loved but couldn't find it
+              online? Our platform allows you to upload a picture of any item
+              you desire, and our sellers will come to you with their offers.
+              Say goodbye to endless scrolling and hello to tailored options.
             </h1>
             <Link
               to="/findItem"

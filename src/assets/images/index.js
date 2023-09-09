@@ -36,9 +36,12 @@ import more from "./more.png";
 // User blank image avator
 import user from "./user.jpg";
 
-// findIt logo
+// findIt
 import findLogo from "./findLogo.png";
 import findAdd from "./findAdd.png";
+import findItem from "./FindItem.png";
+import findService from "./FindService.png";
+import findAccomodation from "./findAccomodation.png";
 
 export {
   logo,
@@ -82,4 +85,7 @@ export {
   // findIt
   findLogo,
   findAdd,
+  findItem,
+  findService,
+  findAccomodation,
 };
