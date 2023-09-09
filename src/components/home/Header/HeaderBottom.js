@@ -6,6 +6,7 @@ import Flex from "../../designLayouts/Flex";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { paginationItems } from "../../../constants";
+import { findLogo } from "../../../assets/images";
 
 const HeaderBottom = () => {
   const products = useSelector((state) => state.orebiReducer.products);
@@ -48,7 +49,7 @@ const HeaderBottom = () => {
             className="flex h-14 cursor-pointer items-center gap-2 text-primeColor"
           >
             <HiOutlineMenuAlt4 className="w-5 h-5" />
-            <p className="text-[14px] font-normal">Shop by Category</p>
+            <p className="text-[14px] font-normal">Search by Category</p>
 
             {show && (
               <motion.ul
@@ -58,22 +59,22 @@ const HeaderBottom = () => {
                 className="absolute top-36 z-50 bg-primeColor w-auto text-[#767676] h-auto p-4 pb-6"
               >
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Accessories
+                  Items
                 </li>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Furniture
+                  Services
                 </li>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Electronics
+                  Accomodation
                 </li>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Clothes
+                  FindIt
                 </li>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Bags
+                  Clothing
                 </li>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Home appliances
+                  Others
                 </li>
               </motion.ul>
             )}
@@ -130,6 +131,12 @@ const HeaderBottom = () => {
               </div>
             )}
           </div>
+
+          {/* FIND IT */}
+          <Link to="/findit">
+            <img src={findLogo} alt="" className=" w-[60px] object-contain " />
+          </Link>
+
           <div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative">
             <div onClick={() => setShowUser(!showUser)} className="flex">
               <FaUser />

@@ -22,6 +22,12 @@ import Offer from "./pages/Offer/Offer";
 import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Shop from "./pages/Shop/Shop";
+import Services from "./pages/Services/Services";
+import Accomodation from "./pages/Accomodation/Accomodation";
+import FindIt from "./pages/FindIt/FindIt";
+import FindService from "./pages/FindIt/FindService";
+import FindItem from "./pages/FindIt/FindItem";
+import FindAccomodation from "./pages/FindIt/FindAccomodation";
 
 const Layout = () => {
   return (
@@ -43,9 +49,15 @@ const router = createBrowserRouter(
         {/* ==================== Header Navlink Start here =================== */}
         <Route index element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
+        <Route path="/services" element={<Services />}></Route>
+        <Route path="/accomodation" element={<Accomodation />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/journal" element={<Journal />}></Route>
+        <Route path="/findit" element={<FindIt />}></Route>
+        <Route path="/findService" element={<FindService />}></Route>
+        <Route path="/findItem" element={<FindItem />}></Route>
+        <Route path="/findAccomodation" element={<FindAccomodation />}></Route>
         {/* ==================== Header Navlink End here ===================== */}
         <Route path="/offer" element={<Offer />}></Route>
         <Route path="/product/:_id" element={<ProductDetails />}></Route>

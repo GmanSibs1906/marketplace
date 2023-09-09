@@ -8,16 +8,16 @@ const Category = () => {
   const items = [
     {
       _id: 990,
-      title: "New Arrivals",
+      title: "Popular",
       icons: true,
     },
     {
       _id: 991,
-      title: "Gudgets",
+      title: "Clothing",
     },
     {
       _id: 992,
-      title: "Accessories",
+      title: "House Items",
       icons: true,
     },
     {

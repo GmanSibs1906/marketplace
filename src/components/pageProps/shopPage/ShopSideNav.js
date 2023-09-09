@@ -1,15 +1,15 @@
 import React from "react";
-import Brand from "./shopBy/Brand";
+import Location from "./shopBy/Location";
 import Category from "./shopBy/Category";
-import Color from "./shopBy/Color";
+import Seller from "./shopBy/Seller";
 import Price from "./shopBy/Price";
 
 const ShopSideNav = () => {
   return (
     <div className="w-full flex flex-col gap-6">
       <Category icons={false} />
-      <Color />
-      <Brand />
+      <Seller />
+      <Location />
       <Price />
     </div>
   );

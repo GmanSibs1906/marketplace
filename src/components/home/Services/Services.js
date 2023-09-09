@@ -18,25 +18,25 @@ const Services = () => {
           img={serviceOne}
           productName="Garden Services"
           price="150.00"
-          color="Blank and White"
+          color="Johannesburg North"
           badge={true}
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
           _id="1012"
           img={serviceTwo}
-          productName="New Backpack"
-          price="180.00"
-          color="Gray"
+          productName="Solar System Installers"
+          price="2000.00"
+          color="Gauteng"
           badge={false}
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
           _id="1013"
           img={serviceThree}
-          productName="Household materials"
-          price="25.00"
-          color="Mixed"
+          productName="Machanic"
+          price="250.00"
+          color="KZN"
           badge={true}
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />

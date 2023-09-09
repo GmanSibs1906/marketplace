@@ -21,7 +21,7 @@ const SpecialOffers = () => {
           _id="1102"
           img={spfTwo}
           productName="Breakfast & Bed"
-          price="180.00"
+          price="980.00"
           color="Sandton"
           badge={true}
           des="Safe location with beautiful views. Price is per night."

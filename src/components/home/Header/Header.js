@@ -50,7 +50,7 @@ const Header = () => {
                   {navBarList.map(({ _id, title, link }) => (
                     <NavLink
                       key={_id}
-                      className="flex font-normal hover:font-bold w-20 h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                      className="flex font-normal hover:font-bold w-[120px] h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
                       to={link}
                       state={{ data: location.pathname.split("/")[1] }}
                     >
@@ -99,7 +99,7 @@ const Header = () => {
                         onClick={() => setCategory(!category)}
                         className="flex justify-between text-base cursor-pointer items-center font-titleFont mb-2"
                       >
-                        Shop by Category{" "}
+                        Search by Category{" "}
                         <span className="text-lg">{category ? "-" : "+"}</span>
                       </h1>
                       {category && (
@@ -109,10 +109,10 @@ const Header = () => {
                           transition={{ duration: 0.4 }}
                           className="text-sm flex flex-col gap-1"
                         >
-                          <li className="headerSedenavLi">New Arrivals</li>
-                          <li className="headerSedenavLi">Gudgets</li>
-                          <li className="headerSedenavLi">Accessories</li>
-                          <li className="headerSedenavLi">Electronics</li>
+                          <li className="headerSedenavLi">Items</li>
+                          <li className="headerSedenavLi">Services</li>
+                          <li className="headerSedenavLi">Accomodation</li>
+                          <li className="headerSedenavLi">FindIt</li>
                           <li className="headerSedenavLi">Others</li>
                         </motion.ul>
                       )}
@@ -122,7 +122,7 @@ const Header = () => {
                         onClick={() => setBrand(!brand)}
                         className="flex justify-between text-base cursor-pointer items-center font-titleFont mb-2"
                       >
-                        Shop by Brand
+                        Search by Brand
                         <span className="text-lg">{brand ? "-" : "+"}</span>
                       </h1>
                       {brand && (
@@ -132,10 +132,10 @@ const Header = () => {
                           transition={{ duration: 0.4 }}
                           className="text-sm flex flex-col gap-1"
                         >
-                          <li className="headerSedenavLi">New Arrivals</li>
-                          <li className="headerSedenavLi">Gudgets</li>
-                          <li className="headerSedenavLi">Accessories</li>
-                          <li className="headerSedenavLi">Electronics</li>
+                          <li className="headerSedenavLi">Items</li>
+                          <li className="headerSedenavLi">Services</li>
+                          <li className="headerSedenavLi">Accomodation</li>
+                          <li className="headerSedenavLi">FindIt</li>
                           <li className="headerSedenavLi">Others</li>
                         </motion.ul>
                       )}
