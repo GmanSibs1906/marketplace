@@ -4,7 +4,7 @@ import FindIt from "../../components/Banner/FindIt";
 import Services from "../../components/home/Services/Services";
 import Sales from "../../components/home/Sales/Sales";
 import Sale from "../../components/home/Sale/Sale";
-import SpecialOffers from "../../components/home/SpecialOffers/SpecialOffers";
+import Accomodation from "../../components/home/Accomodation/Accomodation";
 import FindItAdd from "../../components/home/FindItAdd/FindItAdd";
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
         <Sales />
         <Services />
         <FindItAdd />
-        <SpecialOffers />
+        <Accomodation />
       </div>
     </div>
   );

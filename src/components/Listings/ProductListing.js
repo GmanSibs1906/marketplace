@@ -2,14 +2,13 @@ import React from "react";
 import { BsSuitHeartFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineLabelImportant } from "react-icons/md";
-import Image from "../../designLayouts/Image";
-import user from "../../../assets/images/user.jpg";
-import Badge from "./Badge";
+import Image from "../designLayouts/Image";
+import Badge from "../home/Products/Badge";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../../redux/orebiSlice";
+import { addToCart } from "../../redux/orebiSlice";
 
-const Product = (props) => {
+const ProductListing = (props) => {
   const dispatch = useDispatch();
   const _id = props.productName;
   const idString = (_id) => {
@@ -33,25 +32,12 @@ const Product = (props) => {
           <Image className="w-full h-full" imgSrc={props.img} />
         </div>
         <div className="absolute top-6 left-8">
-          {props.badge && <Badge text="Trusted" />}
+          {props.userRating > 3 && props.userSales > 9
+            ? props.badge && <Badge text="Trusted" />
+            : null}
         </div>
         <div className="w-full h-32 absolute bg-white -bottom-[130px] group-hover:bottom-0 duration-700">
           <ul className="w-full h-full flex flex-col items-end justify-center gap-2 font-titleFont px-2 border-l border-r">
-            <li className="text-[#767676] hover:text-primeColor h-[50px] text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
-              {/* Compare
-              <span>
-                <GiReturnArrow />
-              </span> */}
-              <div className="flex items-center w-[120%] justify-end px-[10px]">
-                <img
-                  src={user}
-                  className=" h-[23px] object-contains mr-[8px] "
-                  alt=""
-                />
-                <p className=" mr-[8px] ">Sipho Khosa</p>
-                <p>⭐️⭐️⭐️</p>
-              </div>
-            </li>
             <li
               onClick={() =>
                 dispatch(
@@ -62,7 +48,7 @@ const Product = (props) => {
                     image: props.img,
                     badge: props.badge,
                     price: props.price,
-                    colors: props.color,
+                    location: props.condition,
                   })
                 )
               }
@@ -73,6 +59,39 @@ const Product = (props) => {
                 <FaShoppingCart />
               </span>
             </li>
+            <li className="text-[#767676] hover:text-primeColor h-[50px] text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-between gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
+              <div className="flex items-center w-[120%] justify-start px-[10px]">
+                <button className=" border border-slate-300 px-[4px] py-[2px] rounded-md ">
+                  Follow
+                </button>
+              </div>
+              <div className="flex items-center w-[120%] justify-end px-[10px]">
+                <p className=" mr-[4px] w-[150px] flex justify-end ">
+                  {props.userName}
+                </p>
+                <img
+                  src={props.userImg}
+                  className=" h-[23px] object-contains mr-[-2px] rounded-[50%] "
+                  alt=""
+                />
+              </div>
+            </li>
+            <li className="text-[#767676] hover:text-primeColor h-[50px] text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
+              <div className="flex items-center w-[120%] justify-end px-[10px]">
+                <p>
+                  {props.userRating === 1
+                    ? "⭐️"
+                    : props.userRating === 2
+                    ? "⭐️⭐️"
+                    : props.userRating === 3
+                    ? "⭐️⭐️⭐️"
+                    : props.userRating === 4
+                    ? "⭐️⭐️⭐️⭐️"
+                    : "⭐️⭐️⭐️⭐️⭐️"}
+                </p>
+              </div>
+            </li>
+
             <li
               onClick={handleProductDetails}
               className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
@@ -80,12 +99,6 @@ const Product = (props) => {
               View Details
               <span className="text-lg">
                 <MdOutlineLabelImportant />
-              </span>
-            </li>
-            <li className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
-              Add to Wish List
-              <span>
-                <BsSuitHeartFill />
               </span>
             </li>
           </ul>
@@ -99,11 +112,11 @@ const Product = (props) => {
           <p className="text-[#767676] text-[14px]">R{props.price}</p>
         </div>
         <div>
-          <p className="text-[#767676] text-[14px]">{props.color}</p>
+          <p className="text-[#767676] text-[14px]">{props.condition}</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Product;
+export default ProductListing;

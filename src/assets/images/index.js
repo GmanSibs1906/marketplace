@@ -43,6 +43,17 @@ import findItem from "./FindItem.png";
 import findService from "./FindService.png";
 import findAccomodation from "./findAccomodation.png";
 
+// Users
+import user1 from "./users/person1.jpeg";
+import user2 from "./users/person2.jpeg";
+import user3 from "./users/person3.webp";
+import user4 from "./users/person4.webp";
+import user5 from "./users/person5.webp";
+import user6 from "./users/person6.webp";
+import user7 from "./users/person7.webp";
+import user8 from "./users/person8.webp";
+import user9 from "./users/person9.webp";
+
 export {
   logo,
   logoLight,
@@ -88,4 +99,15 @@ export {
   findItem,
   findService,
   findAccomodation,
+
+  // Users
+  user1,
+  user2,
+  user3,
+  user4,
+  user5,
+  user6,
+  user7,
+  user8,
+  user9,
 };

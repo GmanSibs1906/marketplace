@@ -2,27 +2,26 @@ import React from "react";
 import { BsSuitHeartFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineLabelImportant } from "react-icons/md";
-import Image from "../../designLayouts/Image";
-import user from "../../../assets/images/user.jpg";
-import Badge from "./Badge";
+import Image from "../designLayouts/Image";
+import Badge from "../home/Products/Badge";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../../redux/orebiSlice";
+import { addToCart } from "../../redux/orebiSlice";
 
-const Product = (props) => {
+const AccomodationListing = (props) => {
   const dispatch = useDispatch();
-  const _id = props.productName;
+  const _id = props.accomodationTitle;
   const idString = (_id) => {
     return String(_id).toLowerCase().split(" ").join("");
   };
   const rootId = idString(_id);
 
   const navigate = useNavigate();
-  const productItem = props;
-  const handleProductDetails = () => {
+  const accomodationItem = props;
+  const handleAccomodationDetails = () => {
     navigate(`/product/${rootId}`, {
       state: {
-        item: productItem,
+        item: accomodationItem,
       },
     });
   };
@@ -33,36 +32,23 @@ const Product = (props) => {
           <Image className="w-full h-full" imgSrc={props.img} />
         </div>
         <div className="absolute top-6 left-8">
-          {props.badge && <Badge text="Trusted" />}
+          {props.userRating > 3 && props.userListings > 9
+            ? props.badge && <Badge text="Trusted" />
+            : null}
         </div>
         <div className="w-full h-32 absolute bg-white -bottom-[130px] group-hover:bottom-0 duration-700">
           <ul className="w-full h-full flex flex-col items-end justify-center gap-2 font-titleFont px-2 border-l border-r">
-            <li className="text-[#767676] hover:text-primeColor h-[50px] text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
-              {/* Compare
-              <span>
-                <GiReturnArrow />
-              </span> */}
-              <div className="flex items-center w-[120%] justify-end px-[10px]">
-                <img
-                  src={user}
-                  className=" h-[23px] object-contains mr-[8px] "
-                  alt=""
-                />
-                <p className=" mr-[8px] ">Sipho Khosa</p>
-                <p>⭐️⭐️⭐️</p>
-              </div>
-            </li>
             <li
               onClick={() =>
                 dispatch(
                   addToCart({
                     _id: props._id,
-                    name: props.productName,
+                    name: props.accomodationTitle,
                     quantity: 1,
                     image: props.img,
                     badge: props.badge,
                     price: props.price,
-                    colors: props.color,
+                    location: props.location,
                   })
                 )
               }
@@ -73,19 +59,46 @@ const Product = (props) => {
                 <FaShoppingCart />
               </span>
             </li>
+            <li className="text-[#767676] hover:text-primeColor h-[50px] text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-between gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
+              <div className="flex items-center w-[120%] justify-start px-[10px]">
+                <button className=" border border-slate-300 px-[4px] py-[2px] rounded-md ">
+                  Follow
+                </button>
+              </div>
+              <div className="flex items-center w-[120%] justify-end px-[10px]">
+                <p className=" mr-[4px] w-[150px] flex justify-end ">
+                  {props.userName}
+                </p>
+                <img
+                  src={props.userImg}
+                  className=" h-[23px] object-contains mr-[-2px] rounded-[50%] "
+                  alt=""
+                />
+              </div>
+            </li>
+            <li className="text-[#767676] hover:text-primeColor h-[50px] text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
+              <div className="flex items-center w-[120%] justify-end px-[10px]">
+                <p>
+                  {props.userRating === 1
+                    ? "⭐️"
+                    : props.userRating === 2
+                    ? "⭐️⭐️"
+                    : props.userRating === 3
+                    ? "⭐️⭐️⭐️"
+                    : props.userRating === 4
+                    ? "⭐️⭐️⭐️⭐️"
+                    : "⭐️⭐️⭐️⭐️⭐️"}
+                </p>
+              </div>
+            </li>
+
             <li
-              onClick={handleProductDetails}
+              onClick={handleAccomodationDetails}
               className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
             >
               View Details
               <span className="text-lg">
                 <MdOutlineLabelImportant />
-              </span>
-            </li>
-            <li className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full">
-              Add to Wish List
-              <span>
-                <BsSuitHeartFill />
               </span>
             </li>
           </ul>
@@ -94,16 +107,16 @@ const Product = (props) => {
       <div className="max-w-80 py-6 flex flex-col gap-1 border-[0px] border-t-0 px-4">
         <div className="flex items-center justify-between font-titleFont">
           <h2 className="text-lg text-primeColor font-bold">
-            {props.productName}
+            {props.accomodationTitle}
           </h2>
           <p className="text-[#767676] text-[14px]">R{props.price}</p>
         </div>
         <div>
-          <p className="text-[#767676] text-[14px]">{props.color}</p>
+          <p className="text-[#767676] text-[14px]">{props.location}</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Product;
+export default AccomodationListing;
