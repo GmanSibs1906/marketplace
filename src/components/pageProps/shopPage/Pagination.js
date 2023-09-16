@@ -1,24 +1,31 @@
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
-import Product from "../../home/Products/Product";
-import { paginationItems } from "../../../constants";
+import { shopItems } from "../../../constants";
+import ProductListing from "../../Listings/ProductListing";
 
-const items = paginationItems;
+const items = shopItems;
 function Items({ currentItems }) {
   return (
     <>
       {currentItems &&
         currentItems.map((item) => (
           <div key={item._id} className="w-full">
-            <Product
-              _id={item._id}
-              img={item.img}
-              productName={item.productName}
-              price={item.price}
-              color={item.color}
-              badge={item.badge}
-              des={item.des}
-            />
+          { item.category == "bike" ? (
+            <ProductListing
+          _id={item._id}
+          userImg={item.userImg}
+          userName={item.userName}
+          userRating={item.userRating}
+          userSales={item.userSales}
+          img={item.img}
+          productName={item.productName}
+          price={item.price}
+          condition={item.condition}
+          des={item.des}
+          badge={true}
+          category = {item.category}
+        /> ) : null
+          }
           </div>
         ))}
     </>

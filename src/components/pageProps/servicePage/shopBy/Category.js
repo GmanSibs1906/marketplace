@@ -4,33 +4,47 @@ import NavTitle from "./NavTitle";
 
 const Category = ({onSelectCategory}) => {
   const [showSubCatOne, setShowSubCatOne] = useState(false);
-
   const items = [
-    {
-      _id: 990,
-      title: "Popular",
+ {
+      _id: 890,
+      title: "Machanic",
       icons: true,
     },
     {
-      _id: 991,
-      title: "Clothing",
+      _id: 891,
+      title: "Plumber",
     },
     {
-      _id: 992,
-      title: "House Items",
+      _id: 892,
+      title: "Garden Services",
       icons: true,
     },
     {
-      _id: 993,
-      title: "Electronics",
+      _id: 893,
+      title: "Electrician",
+    },
+    {
+      _id: 894,
+      title: "Tow Truck",
+    },
+    {
+      _id: 895,
+      title: "Builder",
+    },
+    {
+      _id: 896,
+      title: "Dod Groomer",
+    },
+    {
+      _id: 897,
+      title: "Security",
     },
   ];
 
-  // Function to handle item click and set the selected category
+    // Function to handle item click and set the selected category
   const handleItemClick = (title) => {
     onSelectCategory(title);
   }
-
 
   return (
     <div className="w-full">

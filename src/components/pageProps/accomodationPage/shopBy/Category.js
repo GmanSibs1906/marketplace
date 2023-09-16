@@ -4,33 +4,35 @@ import NavTitle from "./NavTitle";
 
 const Category = ({onSelectCategory}) => {
   const [showSubCatOne, setShowSubCatOne] = useState(false);
-
   const items = [
     {
-      _id: 990,
+      _id: 790,
       title: "Popular",
       icons: true,
     },
     {
-      _id: 991,
-      title: "Clothing",
+      _id: 791,
+      title: "Rentals",
     },
     {
-      _id: 992,
-      title: "House Items",
+      _id: 792,
+      title: "Short-Stays",
       icons: true,
     },
     {
-      _id: 993,
-      title: "Electronics",
+      _id: 793,
+      title: "Flat",
+    },
+    {
+      _id: 794,
+      title: "Cottage",
     },
   ];
 
-  // Function to handle item click and set the selected category
+    // Function to handle item click and set the selected category
   const handleItemClick = (title) => {
     onSelectCategory(title);
   }
-
 
   return (
     <div className="w-full">
@@ -49,7 +51,6 @@ const Category = ({onSelectCategory}) => {
                   onClick={() => setShowSubCatOne(!showSubCatOne)}
                   className="text-[10px] lg:text-xs cursor-pointer text-gray-400 hover:text-primeColor duration-300"
                 >
-                  {/* <ImPlus /> */}
                 </span>
               )}
             </li>

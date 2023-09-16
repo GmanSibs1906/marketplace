@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import NavTitle from "./NavTitle";
 
-const Seller = ({onSelectCategory}) => {
+const Seller = () => {
   const [showColors, setShowColors] = useState(true);
   const colors = [
     {
@@ -28,18 +28,13 @@ const Seller = ({onSelectCategory}) => {
     // },
   ];
 
-    // Function to handle item click and set the selected category
-  const handleItemClick = (title) => {
-    onSelectCategory(title);
-  }
-
   return (
     <div>
       <div
         onClick={() => setShowColors(!showColors)}
         className="cursor-pointer"
       >
-        <NavTitle title="Search by Service Provider" icons={false} />
+        <NavTitle title="Shop by Seller" icons={true} />
       </div>
       {showColors && (
         <motion.div

@@ -4,15 +4,13 @@ import Category from "./shopBy/Category";
 import Seller from "./shopBy/Seller";
 import Price from "./shopBy/Price";
 
-const ShopSideNav = ({onSelectCategory}) => {
+const AccomodationSideNav = ({onSelectCategory}) => {
   return (
     <div className="w-full flex flex-col gap-6">
       <Category icons={false} onSelectCategory={onSelectCategory} />
-      <Seller onSelectCategory={onSelectCategory}/>
-      {/* <Location /> 
-  <Price /> */}
+      <Seller />
     </div>
   );
 };
 
-export default ShopSideNav;
+export default AccomodationSideNav;
